@@ -13,8 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = isset($_POST['username']) ? $_POST['username'] : '';
     $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Hardcoded credentials for demo
-    if ($username === 'admin' && $password === 'admin') {
+    // Dynamic credentials from settings
+    $settings = load_json('settings');
+    $validUser = isset($settings['system']['adminUser']) ? $settings['system']['adminUser'] : 'admin';
+    $validPass = isset($settings['system']['adminPass']) ? $settings['system']['adminPass'] : 'admin';
+
+    if ($username === $validUser && $password === $validPass) {
         $_SESSION['admin_logged_in'] = true;
         header('Location: ' . url('/admin'));
         exit;
@@ -62,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         
         <div class="mt-6 text-center text-xs text-gray-400">
-            Demo: admin / admin
+            Varsayılan: admin / admin123
         </div>
     </div>
 </body>

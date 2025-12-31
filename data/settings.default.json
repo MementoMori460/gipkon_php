@@ -58,7 +58,9 @@
     },
     "system": {
         "version": "1.0.0",
-        "lastBackup": "2025-12-30T19:44:12+00:00"
+        "lastBackup": "2025-12-30T19:44:12+00:00",
+        "adminUser": "admin",
+        "adminPass": "admin123"
     },
     "smtp": {
         "host": "",

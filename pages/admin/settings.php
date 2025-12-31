@@ -59,7 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $settingsData['smtp']['password'] = isset($_POST['smtp_password']) ? $_POST['smtp_password'] : '';
     $settingsData['smtp']['secure'] = isset($_POST['smtp_secure']) ? $_POST['smtp_secure'] : 'tls';
     $settingsData['smtp']['fromName'] = isset($_POST['smtp_fromName']) ? $_POST['smtp_fromName'] : '';
+    $settingsData['smtp']['fromName'] = isset($_POST['smtp_fromName']) ? $_POST['smtp_fromName'] : '';
     $settingsData['smtp']['fromEmail'] = isset($_POST['smtp_fromEmail']) ? $_POST['smtp_fromEmail'] : '';
+    
+    // Admin Credentials
+    if (isset($_POST['admin_user'])) $settingsData['system']['adminUser'] = $_POST['admin_user'];
+    if (isset($_POST['admin_pass'])) $settingsData['system']['adminPass'] = $_POST['admin_pass'];
     
     // Logo upload
     if (isset($_FILES['logo']) && $_FILES['logo']['error'] === UPLOAD_ERR_OK) {
@@ -244,6 +249,27 @@ render_header();
                             <input type="text" name="instagram" class="w-full px-4 py-2 border border-gray-300 rounded-lg" value="<?php echo get_set_val($settingsData, ['socialMedia', 'instagram']); ?>">
                         </div>
                     </div>
+                </div>
+
+                <!-- Admin Credentials -->
+                <div class="border-b border-gray-100 pb-8">
+                     <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                        <i data-lucide="lock" class="w-5 h-5 mr-2 text-primary-600"></i> Yönetici Giriş Bilgileri
+                     </h3>
+                     <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 p-4 rounded-lg mb-4 text-sm">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 inline mr-1"></i>
+                        Dikkat: Kullanıcı adı veya şifreyi değiştirirseniz, bir sonraki girişinizde yeni bilgileri kullanmalısınız.
+                     </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Admin Kullanıcı Adı</label>
+                            <input type="text" name="admin_user" class="w-full px-4 py-2 border border-gray-300 rounded-lg" value="<?php echo get_set_val($settingsData, ['system', 'adminUser']); ?>">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Admin Şifre</label>
+                            <input type="text" name="admin_pass" class="w-full px-4 py-2 border border-gray-300 rounded-lg" value="<?php echo get_set_val($settingsData, ['system', 'adminPass']); ?>">
+                        </div>
+                     </div>
                 </div>
 
                 <div class="pt-4 flex justify-end sticky bottom-0 bg-gray-50/90 py-4 backdrop-blur-sm border-t border-gray-200 mt-8">

@@ -57,9 +57,39 @@ Proje şu anda standart bir PHP hosting veya sunucuda çalışmaya hazırdır.
 
 ## 4. Kullanım Kılavuzu (Kısa)
 
-*   **Admin Girişi:** `/admin` adresinden erişilir. (Varsayılan şifre: `admin123` - Ayarlardan değiştirilmelidir).
+*   **Admin Girişi:** `/admin` adresinden erişilir. (Varsayılan: `admin` / `admin123`).
+    *   **Not:** Giriş yaptıktan sonra **Ayarlar** sayfasının en altından bu şifreyi değiştirebilirsiniz.
 *   **Veri Yedekleme:** `data/` klasöründeki JSON dosyalarını bilgisayarınıza indirerek sitenin tam yedeğini alabilirsiniz.
 *   **Görseller:** Yüklenen görseller otomatik olarak `/images/` altına kategorize edilerek kaydedilir.
+
+## 5. Github "Private" Depo Kurulumu (Opsiyonel)
+
+Admin panelindeki **"Sistem Güncelleme"** özelliğini kullanmak istiyorsanız ve Github deponuz **"Private" (Gizli)** ise, sunucunuzun Github'a erişebilmesi için **Deploy Key** tanımlamanız gerekir.
+
+1.  **Sunucuda SSH Anahtarı Oluşturun:**
+    Sunucu terminalinde şu komutu çalıştırın (tüm sorulara enter diyerek geçebilirsiniz):
+    ```bash
+    ssh-keygen -t rsa -b 4096 -C "server_deploy_key"
+    ```
+2.  **Public Key'i Kopyalayın:**
+    Oluşan public key dosyasının içeriğini kopyalayın:
+    ```bash
+    cat ~/.ssh/id_rsa.pub
+    ```
+3.  **Github'a Ekleyin:**
+    *   Github'da projenize gidin -> **Settings** -> **Deploy keys**.
+    *   **Add deploy key** butonuna tıklayın.
+    *   **Title:** "Production Server" (veya istediğiniz bir isim).
+    *   **Key:** Kopyaladığınız içeriği yapıştırın.
+    *   **Allow write access** seçeneğini *işaretlemeyin* (Güvenlik için sadece okuma izni yeterlidir).
+    *   **Add key** diyerek kaydedin.
+
+4.  **Test Edin:**
+    Sunucuda şu komutu çalıştırarak bağlantıyı test edin:
+    ```bash
+    ssh -T git@github.com
+    ```
+    *"Hi username! You've successfully authenticated..."* mesajını görüyorsanız işlem tamamdır. Artık admin panelinden tek tuşla güncelleme yapabilirsiniz.
 
 ---
 **Gipkon Yazılım Ekibi**
