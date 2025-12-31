@@ -1,0 +1,19 @@
+
+# Dependencies
+vendor/
+
+# Environment
+.env
+
+# Data (Ignore live data, track defaults)
+/data/*.json
+!/data/*.default.json
+
+# User Uploads
+/uploads/*
+/images/downloads/*
+/images/catalogs/*
+
+# System
+.DS_Store
+*.log

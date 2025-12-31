@@ -28,7 +28,14 @@ function load_json($filename) {
     // If running via built-in server, avoid caching issues with file_get_contents sometimes
     clearstatcache();
     $path = BASE_PATH . '/data/' . $filename . '.json';
+    $defaultPath = BASE_PATH . '/data/' . $filename . '.default.json';
+
     if (file_exists($path)) {
+        $json = file_get_contents($path);
+        return json_decode($json, true);
+    } elseif (file_exists($defaultPath)) {
+        // Copy default to live
+        copy($defaultPath, $path);
         $json = file_get_contents($path);
         return json_decode($json, true);
     }

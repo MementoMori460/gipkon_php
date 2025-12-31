@@ -156,6 +156,9 @@ case '/admin/faq':
 case '/admin/video':
     require __DIR__ . '/pages/admin/video.php';
     break;
+case '/admin/update':
+    require __DIR__ . '/pages/admin/update.php';
+    break;
     
     default:
         // Dynamic Routes or 404

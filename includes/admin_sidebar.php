@@ -25,6 +25,7 @@ $currentPage = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
             ['url' => '/admin/faq', 'label' => 'S.S.S.', 'icon' => 'help-circle'],
             ['url' => '/admin/video', 'label' => 'Video', 'icon' => 'video'],
             ['url' => '/admin/backup', 'label' => 'Yedekleme & Sistem', 'icon' => 'save'],
+            ['url' => '/admin/update', 'label' => 'Sistem Güncelleme', 'icon' => 'refresh-cw'],
             ['url' => '/admin/settings', 'label' => 'Ayarlar', 'icon' => 'settings'],
         ];
 
