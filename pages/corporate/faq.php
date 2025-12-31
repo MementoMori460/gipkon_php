@@ -8,7 +8,7 @@ $faqData = load_json('faq');
 
 <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="bg-primary-900 text-white py-12 md:py-20 relative overflow-hidden">
+    <section class="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-12 md:py-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 opacity-90 z-0"></div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <div class="inline-block p-3 bg-white/10 rounded-full mb-6 backdrop-blur-sm">

@@ -37,7 +37,7 @@ $serviceRegions = [
 
 <main class="min-h-screen">
     <!-- Hero Section -->
-    <section class="bg-primary-900 text-white py-20 relative overflow-hidden">
+    <section class="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-primary-900 to-primary-800 opacity-90 z-0"></div>
         <div class="container mx-auto px-4 relative z-10 text-center">
             <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">

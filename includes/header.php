@@ -34,6 +34,8 @@
             // Generate Shades
             echo '--primary-600: ' . $primary . ';'; 
             echo '--primary-700: ' . adjustBrightness($primary, -0.1) . ';'; // Darker
+            echo '--primary-800: ' . adjustBrightness($primary, -0.2) . ';'; // Even Darker
+            echo '--primary-900: ' . adjustBrightness($primary, -0.3) . ';'; // Darkest
             echo '--primary-500: ' . adjustBrightness($primary, 0.1) . ';'; // Lighter
             // Also map to generic primary for some tailwind classes if needed
             echo '--primary-color: ' . $primary . ';';

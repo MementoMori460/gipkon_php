@@ -8,7 +8,7 @@ $catalogs = load_json('catalogs');
 
 <main class="min-h-screen">
     <!-- Hero -->
-    <section class="bg-primary-900 text-white py-20 text-center">
+    <section class="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-20 text-center">
         <div class="container mx-auto px-4">
             <h1 class="text-4xl md:text-5xl font-display font-bold mb-4">
                 E-Kataloglar

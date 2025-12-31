@@ -8,7 +8,7 @@ $references = load_json('references');
 
 <main class="min-h-screen pb-20 bg-gray-50">
     <!-- Header Section -->
-    <section class="bg-primary-900 text-white py-20">
+    <section class="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-20">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">
                 Referanslarımız
