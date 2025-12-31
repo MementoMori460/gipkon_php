@@ -56,6 +56,13 @@ render_header();
                         <span class="font-medium">Dikkat:</span> Bu işlem Github deposundaki son değişiklikleri (main branch) sunucuya çeker ve mevcut dosyaların üzerine yazar.
                     </div>
                 </div>
+
+                <div class="flex items-center p-4 mb-4 text-sm text-amber-800 border border-amber-300 rounded-lg bg-amber-50" role="alert">
+                    <i data-lucide="lock" class="w-5 h-5 mr-3"></i>
+                    <div>
+                        <span class="font-medium">Gizli (Private) Repo:</span> Eğer projeniz Github'da "Private" ise, güncellemenin çalışması için sunucuda <strong>SSH Deploy Key</strong> tanımlanmış olmalıdır. Aksi takdirde "Permission denied" hatası alırsınız.
+                    </div>
+                </div>
                 
                 <p class="text-gray-600 mb-4">
                     Projenizin en güncel versiyonunu Github üzerinden çekmek için aşağıdaki butonu kullanabilirsiniz.
@@ -80,8 +87,17 @@ render_header();
                 </div>
             <?php endif; ?>
 
+            <?php if (!function_exists('exec')): ?>
+                <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+                    <span class="font-medium">Hata:</span> Sunucu yapılandırmasında <code>exec()</code> fonksiyonu devre dışı bırakılmış. Bu nedenle otomatik güncelleme yapılamaz. Lütfen sunucu yöneticinizle görüşün.
+                </div>
+            <?php endif; ?>
+
             <form method="POST">
-                <button type="submit" name="update" class="w-full flex justify-center items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors" onclick="return confirm('Sistemi güncellemek istediğinize emin misiniz? Bu işlem geri alınamaz.');">
+                <button type="submit" name="update" class="w-full flex justify-center items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" 
+                    onclick="return confirm('Sistemi güncellemek istediğinize emin misiniz? Bu işlem geri alınamaz.');"
+                    <?php echo !function_exists('exec') ? 'disabled' : ''; ?>
+                >
                     <i data-lucide="refresh-cw" class="w-5 h-5 mr-2"></i>
                     Sistemi Güncelle (Git Pull)
                 </button>

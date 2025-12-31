@@ -166,8 +166,8 @@ function get_system_version() {
     }
 
     // Try to get git commit hash
-    if (is_dir(BASE_PATH . '/.git')) {
-        $gitShort = shell_exec('cd ' . BASE_PATH . ' && git rev-parse --short HEAD');
+    if (is_dir(BASE_PATH . '/.git') && function_exists('shell_exec')) {
+        $gitShort = @shell_exec('cd ' . BASE_PATH . ' && git rev-parse --short HEAD');
         if ($gitShort) {
             $version .= ' (Build: ' . trim($gitShort) . ')';
         }
