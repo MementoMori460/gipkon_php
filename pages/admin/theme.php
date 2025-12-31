@@ -315,9 +315,12 @@ render_header();
 <script>
     lucide.createIcons();
 
-    function setVal(id, val) {
-        document.querySelector(`input[name="${id}"]`).value = val;
-        document.getElementById(id).value = val;
+    function setVal(name, val) {
+        // Update all inputs with this name (both color picker and text input)
+        const inputs = document.querySelectorAll(`input[name="${name}"]`);
+        inputs.forEach(input => {
+            input.value = val;
+        });
     }
 
     function resetToDefaults() {
