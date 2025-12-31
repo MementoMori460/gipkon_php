@@ -35,6 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['repair'])) {
+    if (copy(BASE_PATH . '/data/references.default.json', BASE_PATH . '/data/references.json')) {
+         $status = 'success';
+         $successMsg = "Referans veritabanı onarıldı.";
+    } else {
+         $status = 'error';
+         $errorMsg = "Onarım başarısız oldu.";
+    }
+}
+
 render_header();
 ?>
 
@@ -102,6 +112,18 @@ render_header();
                     Sistemi Güncelle (Git Pull)
                 </button>
             </form>
+            <div class="mt-8 pt-6 border-t border-gray-100">
+                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Sorun Giderme</h3>
+                 <p class="text-sm text-gray-500 mb-4">
+                     Eğer referans resimlerinde "dosya bulunamadı" gibi sorunlar yaşıyorsanız, aşağıdaki butonu kullanarak resim yollarını düzeltebilirsiniz.
+                 </p>
+                 <form method="POST">
+                    <button type="submit" name="repair" class="flex items-center text-amber-600 hover:text-amber-700 text-sm font-medium transition-colors" onclick="return confirm('Referans veritabanını onarmak istediğinize emin misiniz? Bu işlem mevcut referans listesini varsayılan ile değiştirecektir.');">
+                        <i data-lucide="wrench" class="w-4 h-4 mr-2"></i>
+                        Referans Veritabanını Onar (Dosya Yollarını Düzelt)
+                    </button>
+                </form>
+            </div>
         </div>
     </main>
 </div>
