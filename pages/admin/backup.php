@@ -38,6 +38,30 @@ if (isset($_POST['action']) && $_POST['action'] === 'backup') {
     exit;
 }
 
+// Restore Backup Logic
+if (isset($_GET['restore'])) {
+    $file = basename($_GET['restore']);
+    $filepath = BASE_PATH . '/data/backups/' . $file;
+    
+    if (file_exists($filepath)) {
+        $json = file_get_contents($filepath);
+        $backup = json_decode($json, true);
+        
+        if (isset($backup['data']) && is_array($backup['data'])) {
+            foreach ($backup['data'] as $key => $data) {
+                // Save directly to live json files
+                save_json($key, $data);
+            }
+            header('Location: /admin/backup?msg=restored');
+            exit;
+        } else {
+            $error = "Yedek dosyası bozuk veya geçersiz format.";
+        }
+    } else {
+        $error = "Yedek dosyası bulunamadı.";
+    }
+}
+
 // Download Backup
 if (isset($_GET['download'])) {
     $file = basename($_GET['download']);
@@ -81,7 +105,17 @@ render_header();
 
         <?php if (isset($_GET['msg'])): ?>
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
-                <span class="block sm:inline">Yedekleme başarıyla oluşturuldu.</span>
+                <?php if ($_GET['msg'] === 'created'): ?>
+                    <span class="block sm:inline">Yedekleme başarıyla oluşturuldu.</span>
+                <?php elseif ($_GET['msg'] === 'restored'): ?>
+                    <span class="block sm:inline">Sistem başarıyla yedekten geri yüklendi.</span>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+
+        <?php if (isset($error)): ?>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                <?php echo $error; ?>
             </div>
         <?php endif; ?>
 
@@ -146,7 +180,10 @@ render_header();
                                         <td class="p-3 text-gray-800 font-mono text-sm"><?php echo $b['name']; ?></td>
                                         <td class="p-3 text-gray-600 text-sm"><?php echo date('d.m.Y H:i', $b['date']); ?></td>
                                         <td class="p-3 text-gray-600 text-sm"><?php echo round($b['size'] / 1024, 2); ?> KB</td>
-                                        <td class="p-3 text-right">
+                                        <td class="p-3 text-right flex justify-end gap-3">
+                                            <a href="?restore=<?php echo $b['name']; ?>" class="inline-flex items-center text-amber-600 hover:text-amber-800 text-sm font-medium" onclick="return confirm('Bu yedeği geri yüklemek istediğinize emin misiniz? Mevcut verilerinizin üzerine yazılacaktır.');">
+                                                <i data-lucide="rotate-ccw" class="w-4 h-4 mr-1"></i> Geri Yükle
+                                            </a>
                                             <a href="?download=<?php echo $b['name']; ?>" class="inline-flex items-center text-primary-600 hover:text-primary-800 text-sm font-medium">
                                                 <i data-lucide="download" class="w-4 h-4 mr-1"></i> İndir
                                             </a>
