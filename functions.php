@@ -154,4 +154,25 @@ function adjustBrightness($hexCode, $adjustPercent) {
 
     return '#' . implode($hexCode);
 }
+
+/**
+ * Get System Version
+ */
+function get_system_version() {
+    $version = '1.0.0';
+    $versionFile = BASE_PATH . '/version.txt';
+    if (file_exists($versionFile)) {
+        $version = trim(file_get_contents($versionFile));
+    }
+
+    // Try to get git commit hash
+    if (is_dir(BASE_PATH . '/.git')) {
+        $gitShort = shell_exec('cd ' . BASE_PATH . ' && git rev-parse --short HEAD');
+        if ($gitShort) {
+            $version .= ' (Build: ' . trim($gitShort) . ')';
+        }
+    }
+    
+    return $version;
+}
 ?>

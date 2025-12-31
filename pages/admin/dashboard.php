@@ -164,6 +164,11 @@ render_header();
             </div>
 
 
+
+        <!-- System Version Info -->
+        <div class="mt-8 pt-8 border-t border-gray-200 text-center text-xs text-gray-400">
+            <p>Gipkon CMS v<?php echo get_system_version(); ?></p>
+        </div>
     </main>
 </div>
 
