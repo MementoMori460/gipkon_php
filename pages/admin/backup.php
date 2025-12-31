@@ -94,6 +94,23 @@ if (isset($_GET['restore'])) {
     }
 }
 
+// Delete Backup Logic
+if (isset($_GET['delete'])) {
+    $file = basename($_GET['delete']);
+    $filepath = BASE_PATH . '/data/backups/' . $file;
+    
+    if (file_exists($filepath)) {
+        if (unlink($filepath)) {
+            header('Location: /admin/backup?msg=deleted');
+            exit;
+        } else {
+             $error = "Yedek dosyası silinemedi.";
+        }
+    } else {
+         $error = "Yedek dosyası bulunamadı.";
+    }
+}
+
 // Download Backup
 if (isset($_GET['download'])) {
     $file = basename($_GET['download']);
@@ -112,7 +129,7 @@ $path = BASE_PATH . '/data/backups/';
 if (is_dir($path)) {
     $files = scandir($path);
     foreach ($files as $f) {
-        if (pathinfo($f, PATHINFO_EXTENSION) === 'json') {
+        if (pathinfo($f, PATHINFO_EXTENSION) === 'json' || pathinfo($f, PATHINFO_EXTENSION) === 'zip') {
             $backups[] = [
                 'name' => $f,
                 'size' => filesize($path . $f),
@@ -141,6 +158,8 @@ render_header();
                     <span class="block sm:inline">Yedekleme başarıyla oluşturuldu.</span>
                 <?php elseif ($_GET['msg'] === 'restored'): ?>
                     <span class="block sm:inline">Sistem başarıyla yedekten geri yüklendi.</span>
+                <?php elseif ($_GET['msg'] === 'deleted'): ?>
+                    <span class="block sm:inline">Yedek dosyası başarıyla silindi.</span>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
@@ -217,6 +236,9 @@ render_header();
                                             </a>
                                             <a href="?download=<?php echo $b['name']; ?>" class="inline-flex items-center text-primary-600 hover:text-primary-800 text-sm font-medium">
                                                 <i data-lucide="download" class="w-4 h-4 mr-1"></i> İndir
+                                            </a>
+                                            <a href="?delete=<?php echo $b['name']; ?>" class="inline-flex items-center text-red-600 hover:text-red-800 text-sm font-medium" onclick="return confirm('Bu yedeği silmek istediğinize emin misiniz?');">
+                                                <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Sil
                                             </a>
                                         </td>
                                     </tr>
