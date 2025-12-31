@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "category": "Genel",
+        "question": "GIPKON TEKNOLOJİ hangi sektörlere hizmet vermektedir?",
+        "answer": "Gıda, tekstil, sağlık, otomotiv, lojistik ve enerji sektörlerinde endüstriyel otomasyon çözümleri sunmaktayız. 15+ yıllık deneyimimizle her sektörün özel ihtiyaçlarına uygun çözümler geliştiriyoruz."
+    },
+    {
+        "id": 2,
+        "category": "Genel",
+        "question": "Hangi bölgelerde hizmet veriyorsunuz?",
+        "answer": "Türkiye genelinde hizmet vermekteyiz. Geniş servis ağımız sayesinde tüm illerde teknik destek ve bakım hizmeti sağlayabiliyoruz."
+    },
+    {
+        "id": 3,
+        "category": "Teknik",
+        "question": "Hangi marka otomasyon sistemleriyle çalışıyorsunuz?",
+        "answer": "Siemens, ABB, Schneider Electric, Mitsubishi, Omron gibi dünya çapında tanınmış markaların yanı sıra yerli üreticilerin ürünleriyle de entegrasyon sağlayabiliyoruz."
+    },
+    {
+        "id": 4,
+        "category": "Teknik",
+        "question": "Mevcut sistemlerimize entegrasyon yapabiliyor musunuz?",
+        "answer": "Evet, mevcut sistemlerinize sorunsuz entegrasyon sağlayabiliyoruz. Önce detaylı bir analiz yaparak en uygun entegrasyon yöntemini belirliyoruz."
+    },
+    {
+        "id": 5,
+        "category": "Hizmetler",
+        "question": "Proje süreci nasıl işliyor?",
+        "answer": "Sürecimiz 4 aşamadan oluşur: 1) İhtiyaç analizi ve keşif, 2) Detaylı proje planlaması, 3) Kurulum ve devreye alma, 4) Sürekli destek ve bakım. Her aşamada müşterimizle yakın iletişim halinde oluruz."
+    },
+    {
+        "id": 6,
+        "category": "Hizmetler",
+        "question": "Proje teslim süreniz ne kadardır?",
+        "answer": "Proje büyüklüğüne göre değişmekle birlikte, ortalama 2-6 ay arasında teslim sürelerimiz bulunmaktadır. Acil projeler için hızlandırılmış süreç de sunabiliyoruz."
+    },
+    {
+        "id": 7,
+        "category": "Hizmetler",
+        "question": "Garanti ve destek hizmetleriniz nedir?",
+        "answer": "Tüm projelerimizde 2 yıl garanti sunuyoruz. Ayrıca 7/24 teknik destek hattımız ve periyodik bakım hizmetlerimiz mevcuttur."
+    },
+    {
+        "id": 8,
+        "category": "Teknik",
+        "question": "SCADA ve HMI sistemleri geliştiriyor musunuz?",
+        "answer": "Evet, özel SCADA ve HMI sistemleri geliştiriyoruz. Kullanıcı dostu arayüzler ve gerçek zamanlı izleme özellikleriyle süreçlerinizi tam kontrol altına alabilirsiniz."
+    },
+    {
+        "id": 9,
+        "category": "Hizmetler",
+        "question": "Eğitim hizmeti veriyor musunuz?",
+        "answer": "Evet, kurduğumuz sistemlerin kullanımı için personel eğitimi sağlıyoruz. Teorik ve pratik eğitimlerle ekibinizin sistemi etkin kullanmasını sağlıyoruz."
+    },
+    {
+        "id": 10,
+        "category": "Genel",
+        "question": "Teklif almak için ne yapmam gerekiyor?",
+        "answer": "İletişim sayfamızdaki formu doldurabilir veya doğrudan telefon/e-posta ile bize ulaşabilirsiniz. Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir."
+    }
+]

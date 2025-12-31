@@ -1,0 +1,117 @@
+{
+    "header": [
+        {
+            "id": "kurumsal",
+            "name": "KURUMSAL",
+            "active": true,
+            "items": [
+                {
+                    "name": "Hakkımızda",
+                    "href": "\/kurumsal\/hakkimizda",
+                    "active": true
+                },
+                {
+                    "name": "Tanıtım Videomuz",
+                    "href": "\/kurumsal\/tanitim-videomuz",
+                    "active": true
+                },
+                {
+                    "name": "Kataloglarımız",
+                    "href": "\/kurumsal\/kataloglarimiz",
+                    "active": true
+                },
+                {
+                    "name": "Referanslarımız",
+                    "href": "\/kurumsal\/referanslar",
+                    "active": true
+                },
+                {
+                    "name": "S.S.S.",
+                    "href": "\/kurumsal\/sss",
+                    "active": true
+                },
+                {
+                    "name": "İnsan Kaynakları",
+                    "href": "\/kurumsal\/insan-kaynaklari",
+                    "active": true
+                }
+            ],
+            "href": ""
+        },
+        {
+            "id": "cozumler",
+            "name": "ÇÖZÜMLERİMİZ",
+            "href": "\/cozumler",
+            "active": true
+        },
+        {
+            "id": "referanslar",
+            "name": "REFERANSLAR",
+            "href": "\/referanslar",
+            "active": true
+        },
+        {
+            "id": "projeler",
+            "name": "PROJELERİMİZ",
+            "href": "\/projeler",
+            "active": true
+        },
+        {
+            "id": "hizmetler",
+            "name": "HİZMETLERİMİZ",
+            "href": "\/hizmetler",
+            "active": true
+        },
+        {
+            "id": "servis",
+            "name": "SERVİS AĞIMIZ",
+            "href": "\/servis",
+            "active": false
+        },
+        {
+            "id": "iletisim",
+            "name": "İLETİŞİM",
+            "href": "\/iletisim",
+            "active": true
+        }
+    ],
+    "footer": {
+        "quickLinks": [
+            {
+                "name": "Anasayfa",
+                "href": "\/",
+                "active": true
+            },
+            {
+                "name": "Hakkımızda",
+                "href": "\/kurumsal\/hakkimizda",
+                "active": true
+            },
+            {
+                "name": "Çözümlerimiz",
+                "href": "\/cozumler",
+                "active": true
+            },
+            {
+                "name": "Projelerimiz",
+                "href": "\/projeler",
+                "active": true
+            },
+            {
+                "name": "Hizmetlerimiz",
+                "href": "\/hizmetler",
+                "active": true
+            },
+            {
+                "name": "Hizmet Talebi",
+                "href": "\/hizmet-talebi",
+                "active": true
+            },
+            {
+                "name": "İletişim",
+                "href": "\/iletisim",
+                "active": true
+            }
+        ]
+    }
+}

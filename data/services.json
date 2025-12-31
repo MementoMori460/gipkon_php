@@ -1,0 +1,120 @@
+[
+    {
+        "id": "proje-danismanlik",
+        "title": "Proje & Danışmanlık",
+        "slug": "proje-danismanlik",
+        "description": "GIPKON teknoloji profesyonel ve titiz ekibiyle projenizin her aşamasında gerekli araştırma ve testleri yaparak en doğru sonuca ulaşmanızı sağlayacaktır.",
+        "icon": "lightbulb",
+        "details": [
+            "İhtiyaç analizi",
+            "Fizibilite çalışmaları",
+            "Sistem tasarımı",
+            "Teknik dokümantasyon"
+        ],
+        "image": "/uploads/hero_tekstil.png"
+    },
+    {
+        "id": "anahtar-teslim",
+        "title": "Anahtar Teslim Tesisler",
+        "slug": "anahtar-teslim-tesisler",
+        "description": "Baştan sona tüm süreçleri kapsayan anahtar teslim proje hizmeti.",
+        "icon": "key",
+        "details": [
+            "Tam entegrasyon",
+            "Kurulum ve devreye alma",
+            "Eğitim",
+            "Garanti ve destek"
+        ]
+    },
+    {
+        "id": "fabrika-revizyonlari",
+        "title": "Fabrika Revizyonları",
+        "slug": "fabrika-revizyonlari",
+        "description": "Tesis güncellemeleri, duruşa geçmeden tesis revizyonları, yeni ve ileri uyumluluk sahibi sistemlere entegrasyon gibi alanlarda GIPKON güvencesiyle tesisinizi en hızlı ve verimli şekilde günümüz otomasyon seviyesine getiriyoruz.Tesisinizin verimliliği, izlenebilirliği ve endüstri 4.0 uyumluğunu garanti altına alabileceğiniz bu revizyonlarla ilgili ayrıntılı bilgi almak için bizimle iletişime geçin.",
+        "icon": "factory",
+        "details": [
+            "Sistem analizi",
+            "Modernizasyon",
+            "Kapasite artırma",
+            "Verimlilik iyileştirme"
+        ]
+    },
+    {
+        "id": "sistem-gelistirmeleri",
+        "title": "Sistem Geliştirmeleri",
+        "slug": "sistem-gelistirmeleri",
+        "description": "Mevcut sistemlerinize yeni özellikler ve iyileştirmeler.",
+        "icon": "code",
+        "details": [
+            "Yazılım geliştirme",
+            "Donanım entegrasyonu",
+            "Performans iyileştirme",
+            "Yeni özellikler"
+        ]
+    },
+    {
+        "id": "kesif-risk",
+        "title": "Keşif & Risk Analizi",
+        "slug": "kesif-risk-analizi",
+        "description": "Detaylı keşif ve risk analizi hizmetleri.",
+        "icon": "search",
+        "details": [
+            "Saha keşfi",
+            "Risk değerlendirmesi",
+            "Güvenlik analizi",
+            "Raporlama"
+        ]
+    },
+    {
+        "id": "devreye-alma",
+        "title": "Devreye Alma",
+        "slug": "devreye-alma",
+        "description": "Sistemlerin profesyonel devreye alma hizmeti.",
+        "icon": "play",
+        "details": [
+            "Kurulum",
+            "Test ve kalibrasyon",
+            "Optimizasyon",
+            "Eğitim"
+        ]
+    },
+    {
+        "id": "servis",
+        "title": "Servis",
+        "slug": "servis",
+        "description": "7/24 teknik destek ve servis hizmeti.",
+        "icon": "wrench",
+        "details": [
+            "Bakım",
+            "Onarım",
+            "Acil müdahale",
+            "Periyodik kontrol"
+        ]
+    },
+    {
+        "id": "yedek-parca",
+        "title": "Yedek Parça",
+        "slug": "yedek-parca",
+        "description": "Orijinal yedek parça tedarik hizmeti.",
+        "icon": "package",
+        "details": [
+            "Hızlı tedarik",
+            "Orijinal parçalar",
+            "Stok yönetimi",
+            "Lojistik destek"
+        ]
+    },
+    {
+        "id": "dokumantasyon",
+        "title": "Dokümantasyon",
+        "slug": "dokumantasyon",
+        "description": "Teknik dokümantasyon ve eğitim materyalleri hazırlama.",
+        "icon": "file-text",
+        "details": [
+            "Teknik dökümanlar",
+            "Kullanım kılavuzları",
+            "Eğitim materyalleri",
+            "Şemalar ve çizimler"
+        ]
+    }
+]

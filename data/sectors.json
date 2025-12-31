@@ -1,0 +1,128 @@
+[
+    {
+        "id": "gida",
+        "title": "Gıda Sektörü",
+        "slug": "gida-sektoru",
+        "description": "Gıda sektörü için özel otomasyon çözümleri. Hijyen standartlarına uygun, verimli ve güvenilir sistemler.",
+        "image": "\/uploads\/hero_gida.png",
+        "features": [
+            "Hijyenik tasarım",
+            "Tam otomasyon",
+            "Kalite kontrol sistemleri",
+            "Takip ve izleme"
+        ],
+        "isActive": true
+    },
+    {
+        "id": "tekstil",
+        "title": "Tekstil Sektörü",
+        "slug": "tekstil-sektoru",
+        "description": "Tekstil üretim süreçleri için entegre otomasyon çözümleri.",
+        "image": "\/uploads\/hero_tekstil.png",
+        "features": [
+            "Üretim otomasyonu",
+            "Kalite kontrol",
+            "Enerji verimliliği",
+            "Süreç optimizasyonu"
+        ],
+        "isActive": false
+    },
+    {
+        "id": "saglik",
+        "title": "Sağlık Sektörü",
+        "slug": "saglik-sektoru",
+        "description": "Sağlık sektörü için hassas ve güvenilir otomasyon sistemleri.",
+        "image": "\/uploads\/hero_saglik.png",
+        "features": [
+            "Sterilizasyon sistemleri",
+            "Hassas kontrol",
+            "Güvenlik standartları",
+            "Dokümantasyon"
+        ],
+        "isActive": false
+    },
+    {
+        "id": "kimya",
+        "title": "Kimya Sektörü",
+        "slug": "kimya-sektoru",
+        "description": "Kimya endüstrisi için güvenli ve verimli otomasyon çözümleri.",
+        "image": "\/uploads\/sector_kimya.png",
+        "features": [
+            "Güvenlik sistemleri",
+            "Proses kontrolü",
+            "Otomasyon",
+            "Risk yönetimi"
+        ],
+        "isActive": true
+    },
+    {
+        "id": "ilac",
+        "title": "İlaç Sektörü",
+        "slug": "ilac-sektoru",
+        "description": "İlaç üretimi için GMP standartlarına uygun otomasyon sistemleri.",
+        "image": "\/uploads\/sector_ilac.png",
+        "features": [
+            "GMP uyumlu",
+            "Validasyon",
+            "Takip sistemi",
+            "Kalite güvence"
+        ],
+        "isActive": true
+    },
+    {
+        "id": "kozmetik",
+        "title": "Kozmetik Sektörü",
+        "slug": "kozmetik-sektoru",
+        "description": "Kozmetik üretimi için özel otomasyon çözümleri.",
+        "image": "\/uploads\/project_sut.png",
+        "features": [
+            "Hijyenik üretim",
+            "Karıştırma sistemleri",
+            "Dolum otomasyonu",
+            "Kalite kontrol"
+        ],
+        "isActive": false
+    },
+    {
+        "id": "enerji",
+        "title": "Enerji Sektörü",
+        "slug": "enerji-sektoru",
+        "description": "Enerji üretim ve dağıtım sistemleri için otomasyon çözümleri.",
+        "image": "\/uploads\/sector_enerji.png",
+        "features": [
+            "SCADA sistemleri",
+            "Enerji yönetimi",
+            "İzleme ve kontrol",
+            "Verimlilik"
+        ],
+        "isActive": false
+    },
+    {
+        "id": "maden",
+        "title": "Maden Sektörü",
+        "slug": "maden-sektoru",
+        "description": "Maden işletmeleri için dayanıklı otomasyon sistemleri.",
+        "image": "\/uploads\/sector_maden.png",
+        "features": [
+            "Ağır sanayi",
+            "Dayanıklı sistemler",
+            "Güvenlik",
+            "Verimlilik"
+        ],
+        "isActive": false
+    },
+    {
+        "id": "savunma",
+        "title": "Savunma Sanayi",
+        "slug": "savunma-sanayi",
+        "description": "Savunma sanayi için yüksek güvenlikli otomasyon çözümleri.",
+        "image": "\/uploads\/sector_savunma.png",
+        "features": [
+            "Yüksek güvenlik",
+            "Hassas kontrol",
+            "Özel çözümler",
+            "Kritik sistemler"
+        ],
+        "isActive": false
+    }
+]

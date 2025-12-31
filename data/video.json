@@ -1,0 +1,22 @@
+{
+    "main": {
+        "title": "Kurumsal Tanıtım Filmi",
+        "description": "Daha iyi bir deneyim için HD izleyin",
+        "url": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0",
+        "thumbnail": ""
+    },
+    "highlights": [
+        {
+            "title": "Üretim Tesisi",
+            "description": "5.000 m² kapalı alana sahip modern üretim tesisimizde, son teknoloji ekipmanlarla üretim yapıyoruz."
+        },
+        {
+            "title": "Ar-Ge Merkezi",
+            "description": "Yenilikçi çözümler geliştirdiğimiz Ar-Ge merkezimizde geleceğin teknolojilerini tasarlıyoruz."
+        },
+        {
+            "title": "Uzman Kadro",
+            "description": "Alanında uzman mühendis ve teknik ekibimizle projelerinizi hayata geçiriyoruz."
+        }
+    ]
+}

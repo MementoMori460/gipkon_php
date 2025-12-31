@@ -1,0 +1,72 @@
+{
+    "siteName": "GIPKON TEKNOLOJİ",
+    "siteDescription": "Endüstriyel otomasyon çözümlerinde güvenilir iş ortağınız.",
+    "branding": {
+        "logo": "\/uploads\/logo.png",
+        "favicon": "\/uploads\/favicon.png"
+    },
+    "contact": {
+        "address": "GIPKON TEKNOLOJİ San.Ve.Tic. Ltd. Şti.    \r\nKızılırmak Mah. Dumlupınar Bulvarı No:3C1-160 \r\nNext Level  Çankaya\/ ANKARA",
+        "phone": "+90 312 939 86 33",
+        "gsm": "+90 530 950 07 20",
+        "email": "gipkon@gipkon.com.tr",
+        "mapUrl": "https:\/\/maps.google.com\/maps?q=Next+Level+Loft+Ofis&hl=tr&z=17&output=embed"
+    },
+    "socialMedia": {
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "https:\/\/www.linkedin.com\/company\/gipkon\/",
+        "instagram": ""
+    },
+    "officeHours": {
+        "weekdays": "09:00 - 18:00",
+        "saturday": "09:00 - 18:00",
+        "sunday": "Kapalı"
+    },
+    "theme": {
+        "primaryColor": "#1969d2",
+        "secondaryColor": "#94a3b8",
+        "backgroundColor": "#ffffff",
+        "textColor": "#334155",
+        "header": {
+            "background": "#ffffff",
+            "textColor": "#334155",
+            "navTextColor": "#334155",
+            "contactTextColor": "#ffffff"
+        },
+        "footer": {
+            "background": "#f8fafc",
+            "textColor": "#64748b"
+        },
+        "card": {
+            "background": "#ffffff",
+            "textColor": "#334155",
+            "borderColor": "#e2e8f0"
+        },
+        "components": {
+            "buttonPrimaryBg": "#475569",
+            "buttonPrimaryText": "#ffffff",
+            "buttonSecondaryBg": "#f1f5f9",
+            "buttonSecondaryText": "#475569"
+        }
+    },
+    "footer": {
+        "section1": {
+            "title": "Hakkımızda",
+            "content": "GIPKON Teknoloji, endüstriyel otomasyon alanında yenilikçi çözümler sunar."
+        }
+    },
+    "system": {
+        "version": "1.0.0",
+        "lastBackup": "2025-12-30T19:44:12+00:00"
+    },
+    "smtp": {
+        "host": "",
+        "port": "587",
+        "username": "",
+        "password": "",
+        "secure": "tls",
+        "fromName": "Gipkon İletişim",
+        "fromEmail": ""
+    }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "gida",
+    "title": "GIDA SEKTÖRÜ OTOMASYON ÇÖZÜMLERİ",
+    "subtitle": "Hijyenik ve Verimli Sistemler",
+    "description": "Gıda sektörü için özel otomasyon çözümleri ile üretim süreçlerinizi optimize edin.",
+    "image": "/uploads/hero_gida.png",
+    "cta": {
+      "text": "Bize Ulaşın",
+      "href": "/iletisim"
+    },
+    "secondaryCta": {
+      "text": "Çözümlerimiz",
+      "href": "/cozumler/gida-sektoru"
+    }
+  },
+  {
+    "id": "tekstil",
+    "title": "TEKSTİL SEKTÖRÜ OTOMASYON ÇÖZÜMLERİ",
+    "subtitle": "Entegre Üretim Sistemleri",
+    "description": "Tekstil üretim süreçleriniz için tam entegre otomasyon çözümleri.",
+    "image": "/uploads/hero_tekstil.png",
+    "cta": {
+      "text": "Bize Ulaşın",
+      "href": "/iletisim"
+    },
+    "secondaryCta": {
+      "text": "Projelerimiz",
+      "href": "/projeler"
+    }
+  },
+  {
+    "id": "saglik",
+    "title": "SAĞLIK SEKTÖRÜ OTOMASYON ÇÖZÜMLERİ",
+    "subtitle": "Hassas ve Güvenilir",
+    "description": "Sağlık sektörü için yüksek hassasiyetli otomasyon sistemleri.",
+    "image": "/uploads/hero_saglik.png",
+    "cta": {
+      "text": "Bize Ulaşın",
+      "href": "/iletisim"
+    },
+    "secondaryCta": {
+      "text": "Hizmetlerimiz",
+      "href": "/hizmetler"
+    }
+  }
+]
