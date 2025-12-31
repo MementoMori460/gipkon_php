@@ -175,4 +175,32 @@ function get_system_version() {
     
     return $version;
 }
+
+function zip_folder($folder, &$zipFile, $zipPath) {
+    if (!is_dir($folder)) return;
+    
+    $files = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($folder, RecursiveDirectoryIterator::SKIP_DOTS),
+        RecursiveIteratorIterator::LEAVES_ONLY
+    );
+
+    foreach ($files as $name => $file) {
+        // Skip .DS_Store
+        if ($file->getBasename() === '.DS_Store') continue;
+
+        // Get real and relative path
+        $filePath = $file->getRealPath();
+        
+        // Calculate relative path inside zip
+        // Logic: if $folder = /foo/images and $zipPath = images/
+        // and file is /foo/images/bar.png
+        // relative should be images/bar.png
+        
+        // We can just use substr relative to BASE_PATH
+        $relativePath = substr($filePath, strlen(BASE_PATH) + 1);
+
+        // Add to zip
+        $zipFile->addFile($filePath, $relativePath);
+    }
+}
 ?>

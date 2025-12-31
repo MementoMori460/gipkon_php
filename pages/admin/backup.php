@@ -9,53 +9,85 @@ require_once __DIR__ . '/../../functions.php';
 
 // Create Backup Logic
 if (isset($_POST['action']) && $_POST['action'] === 'backup') {
-    // Note: Recursive directory zip in PHP 5.6 without library is verbose.
-    // For simplicity/compatibility, we will zip the 'data' folder only, or maybe copy it.
-    // Actually, creating a .json dump of everything is safer and easier.
-    
-    $backupData = [
-        'generated_at' => date('c'),
-        'data' => []
-    ];
-    
-    $files = ['projects', 'references', 'sectors', 'services', 'settings', 'menu', 'hero', 'faq', 'catalogs'];
-    foreach ($files as $f) {
-        $backupData['data'][$f] = load_json($f);
+    if (!class_exists('ZipArchive')) {
+        $error = "Sunucuda ZipArchive eklentisi yüklü değil, tam yedek alınamıyor.";
+    } else {
+        $zip = new ZipArchive();
+        $filename = 'backup_' . date('Y-m-d_H-i-s') . '.zip';
+        $path = BASE_PATH . '/data/backups/';
+        if (!is_dir($path)) mkdir($path, 0755, true);
+        $fullPath = $path . $filename;
+
+        if ($zip->open($fullPath, ZipArchive::CREATE) === TRUE) {
+            // 1. Add Data (JSONs)
+            // We scan data dir, add .json files but exclude backups folder
+            $dataFiles = scandir(BASE_PATH . '/data');
+            foreach ($dataFiles as $f) {
+                if ($f === '.' || $f === '..' || is_dir(BASE_PATH . '/data/' . $f)) continue;
+                if (pathinfo($f, PATHINFO_EXTENSION) === 'json') {
+                    $zip->addFile(BASE_PATH . '/data/' . $f, 'data/' . $f);
+                }
+            }
+            
+            // 2. Add Images
+            zip_folder(BASE_PATH . '/images', $zip, '');
+
+            // 3. Add Metadata info file
+            $meta = [
+                'created_at' => date('c'),
+                'version' => '1.0',
+                'type' => 'full_backup'
+            ];
+            $zip->addFromString('backup_info.json', json_encode($meta, JSON_PRETTY_PRINT));
+
+            $zip->close();
+
+            // Update settings
+            $settings = load_json('settings');
+            $settings['system']['lastBackup'] = date('c');
+            save_json('settings', $settings);
+
+            header('Location: /admin/backup?msg=created');
+            exit;
+        } else {
+            $error = "Yedek dosyası oluşturulamadı.";
+        }
     }
-    
-    $filename = 'backup_' . date('Y-m-d_H-i-s') . '.json';
-    $path = BASE_PATH . '/data/backups/';
-    if (!is_dir($path)) mkdir($path, 0755, true);
-    
-    file_put_contents($path . $filename, json_encode($backupData, JSON_PRETTY_PRINT));
-    
-    // Update settings with last backup time
-    $settings = load_json('settings');
-    $settings['system']['lastBackup'] = date('c');
-    save_json('settings', $settings);
-    
-    header('Location: /admin/backup?msg=created');
-    exit;
 }
 
 // Restore Backup Logic
 if (isset($_GET['restore'])) {
     $file = basename($_GET['restore']);
     $filepath = BASE_PATH . '/data/backups/' . $file;
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
     
     if (file_exists($filepath)) {
-        $json = file_get_contents($filepath);
-        $backup = json_decode($json, true);
-        
-        if (isset($backup['data']) && is_array($backup['data'])) {
-            foreach ($backup['data'] as $key => $data) {
-                // Save directly to live json files
-                save_json($key, $data);
-            }
-            header('Location: /admin/backup?msg=restored');
-            exit;
-        } else {
-            $error = "Yedek dosyası bozuk veya geçersiz format.";
+        if ($ext === 'zip') {
+             if (!class_exists('ZipArchive')) {
+                $error = "Sunucuda ZipArchive eklentisi eksik.";
+             } else {
+                $zip = new ZipArchive();
+                if ($zip->open($filepath) === TRUE) {
+                    // Extract to BASE_PATH (overwrite)
+                    $zip->extractTo(BASE_PATH);
+                    $zip->close();
+                    header('Location: /admin/backup?msg=restored');
+                    exit;
+                } else {
+                    $error = "Yedek dosyası açılamadı.";
+                }
+             }
+        } elseif ($ext === 'json') {
+             // Legacy JSON restore support
+             $json = file_get_contents($filepath);
+             $backup = json_decode($json, true);
+             if (isset($backup['data']) && is_array($backup['data'])) {
+                foreach ($backup['data'] as $key => $data) {
+                    save_json($key, $data);
+                }
+                header('Location: /admin/backup?msg=restored');
+                exit;
+             }
         }
     } else {
         $error = "Yedek dosyası bulunamadı.";
@@ -123,17 +155,16 @@ render_header();
             
             <!-- Create Backup -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h2 class="text-lg font-semibold mb-4 pb-2 border-b">Yeni Yedek Oluştur</h2>
+                <h2 class="text-lg font-semibold mb-4 pb-2 border-b">Tam Sistem Yedeği Oluştur</h2>
                 <p class="text-gray-600 mb-6">
-                    Mevcut veritabanını (tüm JSON dosyaları) tek bir dosya olarak yedekler. 
-                    Görseller dahil edilmez.
+                    Mevcut veritabanını (JSON dosyaları) ve <strong>yüklenen tüm görselleri (images)</strong> içeren tam kapsamlı, indirilebilir bir .zip arşivi oluşturur.
                 </p>
                 
                 <form method="POST">
                     <input type="hidden" name="action" value="backup">
                     <button type="submit" class="w-full bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors flex items-center justify-center">
-                        <i data-lucide="database" class="w-5 h-5 mr-2"></i>
-                        Yedek Oluştur
+                        <i data-lucide="archive" class="w-5 h-5 mr-2"></i>
+                        Tam Yedek Oluştur (.ZIP)
                     </button>
                 </form>
             </div>
